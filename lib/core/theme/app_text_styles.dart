@@ -7,24 +7,29 @@ class AppTextStyles {
   AppTextStyles._();
 
   static final heading = GoogleFonts.poppins(
-    fontSize: 32,
+    fontSize: 34,
     fontWeight: FontWeight.bold,
     color: AppColors.textPrimary,
   );
 
   static final title = GoogleFonts.poppins(
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: FontWeight.w600,
     color: AppColors.textPrimary,
   );
 
-  static final body = GoogleFonts.poppins(
+  static final subtitle = GoogleFonts.poppins(
     fontSize: 16,
+    color: AppColors.textSecondary,
+  );
+
+  static final body = GoogleFonts.poppins(
+    fontSize: 15,
     color: AppColors.textPrimary,
   );
 
-  static final caption = GoogleFonts.poppins(
-    fontSize: 13,
+  static final small = GoogleFonts.poppins(
+    fontSize: 12,
     color: AppColors.textSecondary,
   );
 }

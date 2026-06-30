@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'core/theme/app_colors.dart';
+import 'core/theme/app_text_styles.dart';
 import 'core/theme/app_theme.dart';
 
 class SkyCastApp extends StatelessWidget {
@@ -8,16 +10,15 @@ class SkyCastApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'SkyCast',
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
-      home: const Scaffold(
+      home: Scaffold(
         body: Center(
           child: Text(
             'SkyCast',
-            style: TextStyle(
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
+            style: AppTextStyles.heading.copyWith(
+              color: AppColors.primary,
             ),
           ),
         ),
