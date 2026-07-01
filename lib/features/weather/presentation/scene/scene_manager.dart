@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../core/weather/weather_scene_type.dart';
 enum WeatherSceneType {
   sunny,
   cloudy,

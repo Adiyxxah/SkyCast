@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/weather_metric_card.dart';
-import '../../../../services/weather_service.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class WeatherHero extends StatelessWidget {
+import '../../../../providers/weather_provider.dart';
+
+class WeatherHero extends ConsumerWidget {
   const WeatherHero({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final weather = WeatherService.currentWeather;
+  Widget build(
+      BuildContext context,
+      WidgetRef ref,
+      ) {
+    final weatherAsync =
+    ref.watch(weatherProvider);
 
-    return Container(
+return weatherAsync.when(
+
+data: (weather) {
+
+return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
@@ -132,6 +142,32 @@ class WeatherHero extends StatelessWidget {
 
         ],
       ),
+);
+},
+
+  loading: () {
+    return const SizedBox(
+      height: 420,
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
     );
+  },
+
+  error: (error, stack) {
+    return SizedBox(
+      height: 420,
+      child: Center(
+        child: Text(
+          error.toString(),
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  },
+
+);
   }
 }

@@ -32,11 +32,10 @@ class ApiService {
 
     if (response.statusCode == 200) {
 
-      final json =
-      jsonDecode(response.body);
+      final json = jsonDecode(response.body);
+
 
       return json["current"];
-
     }
 
     throw Exception(

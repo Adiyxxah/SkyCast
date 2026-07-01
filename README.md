@@ -1,17 +1,112 @@
-# skycast
+# \# 🌤 SkyCast
 
-A new Flutter project.
+# 
 
-## Getting Started
+# A next-generation cinematic weather application built with Flutter.
 
-This project is a starting point for a Flutter application.
+# 
 
-A few resources to get you started if this is your first Flutter project:
+# \## 🚀 Features
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+# 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# \- Real-time Weather
+
+# \- Beautiful Glassmorphism UI
+
+# \- Cinematic Sky Engine (In Progress)
+
+# \- Dynamic Weather Scenes
+
+# \- GPS Weather Detection (Upcoming)
+
+# \- City Search (Upcoming)
+
+# \- Hourly Forecast (Upcoming)
+
+# \- 7-Day Forecast (Upcoming)
+
+# \- Air Quality (Upcoming)
+
+# 
+
+# \## 🏗 Tech Stack
+
+# 
+
+# \- Flutter
+
+# \- Dart
+
+# \- Riverpod
+
+# \- REST API
+
+# \- Open-Meteo API
+
+# \- Git \& GitHub
+
+# 
+
+# \## 📂 Architecture
+
+# 
+
+# UI
+
+# ↓
+
+# Providers
+
+# ↓
+
+# Repository
+
+# ↓
+
+# API Service
+
+# ↓
+
+# Open-Meteo API
+
+# 
+
+# \## 📌 Current Status
+
+# 
+
+# 🚧 Under Active Development
+
+# 
+
+# \## 🎯 Future Roadmap
+
+# 
+
+# \- Docker
+
+# \- GitHub Actions
+
+# \- AWS Deployment
+
+# \- SkyCast Globe
+
+# \- Real Cloud Engine
+
+# \- Rain Physics
+
+# \- Bird Animation
+
+# \- Aircraft Animation
+
+# \- Dynamic Lighting
+
+# 
+
+# \## 👨‍💻 Author
+
+# 
+
+# Aditya Kumar Pradhan
+

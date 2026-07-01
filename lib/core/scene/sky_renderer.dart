@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../animations/animated_gradient_background.dart';
 import '../animations/floating_clouds.dart';
-import 'widgets/sun_layer.dart';
 class SkyRenderer extends StatelessWidget {
   final Widget child;
 

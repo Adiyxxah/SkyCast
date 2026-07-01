@@ -30,7 +30,7 @@ class _FloatingCloudsState extends State<FloatingClouds>
   Widget cloud(double top, double size, double opacity, double speedFactor) {
     return AnimatedBuilder(
       animation: _controller,
-      builder: (_, __) {
+      builder: (_,_) {
         final screenWidth = MediaQuery.of(context).size.width;
 
         final x =

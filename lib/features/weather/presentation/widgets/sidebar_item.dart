@@ -31,7 +31,7 @@ class SidebarItem extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               color: isSelected
-                  ? Colors.white.withOpacity(0.08)
+                  ?Colors.white.withValues(alpha: 0.20)
                   : Colors.transparent,
               borderRadius: BorderRadius.circular(14),
             ),
