@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/scene/sky_renderer.dart';
 import '../widgets/sidebar.dart';
 import '../widgets/top_bar.dart';
 import '../widgets/weather_hero.dart';
@@ -10,38 +11,34 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Row(
-          children: [
+      body: SkyRenderer(
+        child: SafeArea(
+          child: Row(
+            children: [
+              // Left Sidebar
+              const Sidebar(),
 
-            // Left Sidebar
-            const Sidebar(),
+              // Right Content
+              Expanded(
+                child: Column(
+                  children: [
+                    const TopBar(),
 
-            // Right Content
-            Expanded(
-              child: Column(
-                children: [
-
-                  const TopBar(),
-
-                  Expanded(
-                    child: SingleChildScrollView(
-                      padding: const EdgeInsets.all(30),
-                      child: const Column(
-                        children: [
-
-                          WeatherHero(),
-
-                        ],
+                    Expanded(
+                      child: SingleChildScrollView(
+                        padding: const EdgeInsets.all(30),
+                        child: const Column(
+                          children: [
+                            WeatherHero(),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-
-                ],
+                  ],
+                ),
               ),
-            ),
-
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -1,6 +1,6 @@
 name: skycast
-description: "A production-ready cinematic weather application built with Flutter."
-publish_to: 'none'
+description: "A production-grade weather application built with Flutter."
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -13,17 +13,30 @@ dependencies:
 
   cupertino_icons: ^1.0.8
 
-  # State Management
-  flutter_riverpod: ^2.6.1
-
   # Networking
-  dio: ^5.9.0
+  http: ^1.5.0
+
+  # State Management
+  flutter_riverpod: ^3.0.3
+
+  # Navigation
+  go_router: ^16.2.1
+
+  # Date & Time
+  intl: ^0.20.2
 
   # Fonts
-  google_fonts: ^6.3.1
+  google_fonts: ^6.3.2
 
-  # SVG
-  flutter_svg: ^2.2.0
+  # Animations
+  flutter_animate: ^4.5.2
+  lottie: ^3.3.2
+
+  # Image Caching
+  cached_network_image: ^3.4.1
+
+  # Local Storage
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
@@ -37,11 +50,4 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    - assets/weather/
-    - assets/animations/
-
-    # We'll add these later
-    # - assets/fonts/
-    # - assets/sounds/
-
-  fonts: []
+    - assets/lottie/

@@ -1,6 +1,9 @@
+import '../core/weather/weather_scene_type.dart';
 class WeatherModel {
   final String city;
   final String condition;
+  final WeatherSceneType scene;
+
   final double temperature;
   final double feelsLike;
   final int humidity;
@@ -11,6 +14,7 @@ class WeatherModel {
   const WeatherModel({
     required this.city,
     required this.condition,
+    required this.scene,
     required this.temperature,
     required this.feelsLike,
     required this.humidity,
