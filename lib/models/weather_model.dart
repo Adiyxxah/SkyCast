@@ -1,5 +1,6 @@
 import '../core/weather/weather_scene_type.dart';
-
+import 'hourly_weather.dart';
+import 'daily_weather.dart';
 class WeatherModel {
   final String city;
 
@@ -18,6 +19,8 @@ class WeatherModel {
   final double visibility;
 
   final int uvIndex;
+  final List<HourlyWeather> hourlyForecast;
+  final List<DailyWeather> dailyForecast;
 
   const WeatherModel({
     required this.city,
@@ -29,13 +32,50 @@ class WeatherModel {
     required this.windSpeed,
     required this.visibility,
     required this.uvIndex,
+    required this.hourlyForecast,
+    required this.dailyForecast,
   });
 
   factory WeatherModel.fromJson(
       Map<String, dynamic> json,
       String city,
       ) {
-    final weatherCode = json["weather_code"] ?? 0;
+    final current = json["current"];
+    final hourly = json["hourly"];
+    final daily = json["daily"];
+
+    final weatherCode = current["weather_code"] ?? 0;
+
+    // Temporary empty list (we'll fill this in the next step)
+    final List<HourlyWeather> hourlyForecast = [];
+
+    for (int i = 0; i < 24; i++) {
+      hourlyForecast.add(
+        HourlyWeather.fromJson(
+          time: hourly["time"][i],
+          temperature: hourly["temperature_2m"][i],
+          weatherCode: hourly["weather_code"][i],
+        ),
+      );
+    }
+    final List<DailyWeather> dailyForecast = [];
+
+    for (int i = 0; i < 7; i++) {
+
+      dailyForecast.add(
+
+          DailyWeather.fromJson(
+            date: daily["time"][i],
+            maxTemperature: daily["temperature_2m_max"][i],
+            minTemperature: daily["temperature_2m_min"][i],
+            weatherCode: daily["weather_code"][i],
+            sunrise: daily["sunrise"][i],
+            sunset: daily["sunset"][i],
+          )
+
+      );
+
+    }
 
     return WeatherModel(
       city: city,
@@ -45,19 +85,23 @@ class WeatherModel {
       scene: _scene(weatherCode),
 
       temperature:
-      (json["temperature_2m"] as num).toDouble(),
+      (current["temperature_2m"] as num).toDouble(),
 
       feelsLike:
-      (json["apparent_temperature"] as num).toDouble(),
+      (current["apparent_temperature"] as num).toDouble(),
 
       humidity:
-      (json["relative_humidity_2m"] as num).toInt(),
+      (current["relative_humidity_2m"] as num).toInt(),
 
       windSpeed:
-      (json["wind_speed_10m"] as num).toDouble(),
+      (current["wind_speed_10m"] as num).toDouble(),
 
       visibility: 10.0,
+
       uvIndex: 5,
+
+      hourlyForecast: hourlyForecast,
+      dailyForecast: dailyForecast,
     );
   }
 

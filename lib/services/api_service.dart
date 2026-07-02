@@ -24,6 +24,18 @@ class ApiService {
         "apparent_temperature,"
         "weather_code,"
         "wind_speed_10m"
+        "&hourly="
+        "temperature_2m,"
+        "weather_code"
+
+        "&daily="
+        "weather_code,"
+        "temperature_2m_max,"
+        "temperature_2m_min,"
+        "sunrise,"
+        "sunset"
+
+        "&forecast_days=7"
         "&timezone=auto";
 
     final response = await http.get(
@@ -35,7 +47,7 @@ class ApiService {
       final json = jsonDecode(response.body);
 
 
-      return json["current"];
+      return json;
     }
 
     throw Exception(

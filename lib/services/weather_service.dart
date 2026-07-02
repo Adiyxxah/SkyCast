@@ -12,5 +12,7 @@ class WeatherService {
     windSpeed: 14,
     visibility: 9.5,
     uvIndex: 3,
+    hourlyForecast: [],
+    dailyForecast: [],
   );
 }

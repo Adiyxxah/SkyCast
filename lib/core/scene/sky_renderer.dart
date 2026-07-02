@@ -1,34 +1,47 @@
 import 'package:flutter/material.dart';
 
-import '../animations/animated_gradient_background.dart';
-import '../animations/floating_clouds.dart';
+import '../weather/day_phase_helper.dart';
+import '../weather/weather_scene_type.dart';
+
+import 'scene_manager.dart';
+
 class SkyRenderer extends StatelessWidget {
+
   final Widget child;
 
+  final WeatherSceneType scene;
+
   const SkyRenderer({
+
     super.key,
+
     required this.child,
+
+    required this.scene,
+
   });
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedGradientBackground(
-      child: Stack(
-        children: [
 
-          //----------------------------------
-          // Cloud Layer
-          //----------------------------------
+    final phase =
 
-          const FloatingClouds(),
+    DayPhaseHelper.fromHour(
 
-          //----------------------------------
-          // Dashboard UI
-          //----------------------------------
+      DateTime.now().hour,
 
-          child,
-        ],
-      ),
     );
+
+    return SceneManager(
+
+      scene: scene,
+
+      phase: phase,
+
+      child: child,
+
+    );
+
   }
+
 }
